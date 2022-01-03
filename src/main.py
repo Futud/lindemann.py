@@ -12,6 +12,11 @@ class MyClient(discord.Client):
     async def on_message(self, message):
         if client.user.mentioned_in(message):
             await message.channel.send(random.choice(messages))
+            print("Gunnar gesendet")
+        if 'Linke' in message.content: 
+            await message.channel.send("https://media.discordapp.net/attachments/922478840356425758/927612779819585626/laseraugenheckerman.png")
+        if 'linke' in message.content: 
+            await message.channel.send("https://media.discordapp.net/attachments/922478840356425758/927612779819585626/laseraugenheckerman.png")
 
 client = MyClient()
 client.run("token")
