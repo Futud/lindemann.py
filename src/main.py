@@ -18,7 +18,7 @@ class MyClient(discord.Client):
     
     async def on_guild_join(self, guild):
         await guild.text_channels[0].send(random.choice(messages))
-        print("Joined guild " + guild.id + " and sent Gunnar")
+        print("Joined guild and sent Gunnar")
 
 client = MyClient()
 client.run("token")
