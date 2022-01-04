@@ -15,6 +15,10 @@ class MyClient(discord.Client):
             await message.channel.send(random.choice(messages))
             print("Gunnar gesendet")
         [await message.channel.send("https://media.discordapp.net/attachments/922478840356425758/927612779819585626/laseraugenheckerman.png") for word in message.content.split(' ') if word in linke]
+    
+    async def on_guild_join(self, guild):
+        await guild.text_channels[0].send(random.choice(messages))
+        print("Joined guild " + guild.id + " and sent Gunnar")
 
 client = MyClient()
 client.run("token")
